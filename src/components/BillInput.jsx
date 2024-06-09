@@ -1,11 +1,10 @@
-import { useState } from "react";
+
 import Input from "./Input"
 import Heading from "./Heading"
 
-export default function BillInput() {
-  const [billAmount , setBillAmount] = useState(0);
+export default function BillInput({billAmount,setBillAmount}) {
   const handleBillAmount = (e) => {
-    setBillAmount(e.target.value);
+    setBillAmount(Number(e.target.value));
   }
   return (
     <div className="bill-container">

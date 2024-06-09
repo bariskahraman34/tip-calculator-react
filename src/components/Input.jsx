@@ -1,5 +1,4 @@
 export default function Input(props) {
-  console.log(props)
   return (
     <input
         id={props.id}
@@ -7,6 +6,7 @@ export default function Input(props) {
         type={props.type}
         placeholder={props.placeholder}
         onChange={props.onChange}
+        value={props.value}
         required
     />
   )

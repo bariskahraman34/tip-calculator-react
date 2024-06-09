@@ -1,4 +1,8 @@
-export default function RightSide() {
+export default function RightSide({totalPerPerson,totalTipPerPerson,resetValues}) {
+  const getClassName = () => {
+    return (totalPerPerson && totalTipPerPerson > 0 ? 'reset-btn active' : 'reset-btn not-active');
+  }
+  console.log(getClassName());
   return (
     <div className="right-side-container">
       <div className="right-side-top-container">
@@ -7,17 +11,17 @@ export default function RightSide() {
                   <h3 className="right-side-heading">Tip Amount</h3>
                   <span>/ person</span>
               </div>
-              <span className="result" id="tip-amount-result">$0.00</span>
+              <span className="result" id="tip-amount-result"> {totalTipPerPerson ? `$${totalTipPerPerson.toFixed(2)}` : "$0.00"} </span>
           </div>
           <div className="right-side-input-container">
               <div className="heading-container">
                   <h3 className="right-side-heading">Total</h3>
                   <span>/ person</span>
               </div>
-              <span className="result" id="total-result">$0.00</span>
+              <span className="result" id="total-result"> {totalPerPerson ? `$${totalPerPerson.toFixed(2)}` : "$0.00" }</span>
           </div>
       </div>
-      <a href="#" className="reset-btn not-active">RESET</a>
+      <a href="#" className={getClassName()} onClick={resetValues}>RESET</a>
     </div>
   )
 }

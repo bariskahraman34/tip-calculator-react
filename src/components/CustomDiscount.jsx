@@ -1,18 +1,23 @@
 import Input from "./Input"
 import Heading from "./Heading"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export default function CustomDiscount() {
-  const [discountValue , setDiscountValue] = useState(0);
+export default function CustomDiscount({discountValue,setDiscountValue,customDiscountValue,setCustomDiscountValue}) {
   const [active , setActive] = useState(null);
   const handleDiscountClick = (e,index) => {
     e.preventDefault();
     const val = e.target.getAttribute('data-value');
     if(val){
-      setDiscountValue(val);
+      setDiscountValue(Number(val));
       setActive(index);
     }
   }
+
+  useEffect(() => {
+    if(discountValue == ''){
+      setActive(null);
+    }
+  },[discountValue])
 
   const buttons = [
     {value:"5" , label:'5%'},
@@ -36,7 +41,7 @@ export default function CustomDiscount() {
             {btn.label}
           </a>
         ))}
-          <Input className="input-element" id="custom-discount" type="number" placeholder="Custom" value={discountValue} onChange={(e) => {setDiscountValue(e.target.value); setActive(null);}}/>
+          <Input className="input-element" id="custom-discount" type="number" placeholder="Custom" value={customDiscountValue} onChange={(e) => {setDiscountValue(Number(e.target.value)); setActive(null); setCustomDiscountValue(Number(e.target.value))}}/>
       </div>
       <p>Selected Discount: {discountValue}</p>
     </div>
