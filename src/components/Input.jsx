@@ -3,7 +3,7 @@ export default function Input(props) {
     <input
         id={props.id}
         className={props.className}
-        type={props.type}
+        type="text"
         placeholder={props.placeholder}
         onChange={props.onChange}
         value={props.value}
