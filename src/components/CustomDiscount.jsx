@@ -43,7 +43,6 @@ export default function CustomDiscount({discountValue,setDiscountValue,customDis
         ))}
           <Input className="input-element" id="custom-discount" type="number" placeholder="Custom" value={customDiscountValue} onChange={(e) => {setDiscountValue(Number(e.target.value)); setActive(null); setCustomDiscountValue(Number(e.target.value))}}/>
       </div>
-      <p>Selected Discount: {discountValue}</p>
     </div>
   )
 }

@@ -15,7 +15,6 @@ export default function BillInput({billAmount,setBillAmount}) {
           </svg>
           <Input className="input-element input-inline-element" id="bill-input" type="number" placeholder="0" value={billAmount} onChange={handleBillAmount} />
       </div>
-          <p>Bill Amount:{billAmount}</p>
     </div>
   )
 }

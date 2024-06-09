@@ -23,7 +23,6 @@ export default function NopInput({numPeople , setNumPeople}) {
           </svg>
           <Input className="input-element input-inline-element" id="number-of-people-input" type="number" placeholder="0" value={numPeople} onChange={handleNumPeople} />
       </div>
-      <p>Number Of People: {numPeople}</p>
     </div>
   )
 }

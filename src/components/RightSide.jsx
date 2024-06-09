@@ -2,7 +2,6 @@ export default function RightSide({totalPerPerson,totalTipPerPerson,resetValues}
   const getClassName = () => {
     return (totalPerPerson && totalTipPerPerson > 0 ? 'reset-btn active' : 'reset-btn not-active');
   }
-  console.log(getClassName());
   return (
     <div className="right-side-container">
       <div className="right-side-top-container">
